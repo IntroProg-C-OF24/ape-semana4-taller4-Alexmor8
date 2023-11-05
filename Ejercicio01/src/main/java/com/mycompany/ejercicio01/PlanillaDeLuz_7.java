@@ -11,19 +11,23 @@ import java.util.Scanner;
 public class PlanillaDeLuz_7 {
 
     public static void main(String[] args) {
-        int valorCostoKilobait, numeroKconsumidos, edad;
+        double valorCostoKilobait, numeroKconsumidos, porcentaje;
+        int edad;
         Scanner teclado = new Scanner(System.in);
 
         System.out.println("Ingrese edad del cliente: ");
         edad = teclado.nextInt();
         System.out.println("Ingrese valor de costo por kilovatios: ");
-        valorCostoKilobait = teclado.nextInt();
+        valorCostoKilobait = teclado.nextDouble();
         System.out.println("Ingrese el numero de kilovatios consumidos: ");
-        numeroKconsumidos = teclado.nextInt();
+        numeroKconsumidos = teclado.nextDouble();
+        
+        porcentaje =(valorCostoKilobait + numeroKconsumidos) * 10 / 100;
 
         if (edad >= 65) {
             System.out.println("=======Su Valor a Cancelar es:  =======");
-            System.out.println((valorCostoKilobait + numeroKconsumidos) * 10 / 100);
+           
+            System.out.println((valorCostoKilobait + numeroKconsumidos) - porcentaje);
         } else {
             System.out.println("=======Su Valor a Cancelar es:  =======");
             System.out.println(valorCostoKilobait + numeroKconsumidos);

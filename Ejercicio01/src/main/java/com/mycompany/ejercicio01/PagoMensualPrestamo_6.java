@@ -16,8 +16,10 @@ public class PagoMensualPrestamo_6 {
         System.out.println("Ingrese el interes mensual: ");
         interesMensual = teclado.nextDouble();
         System.out.println("Ingrese el plazo del prestamo en meses: ");
-        pagoMensual = teclado.nextDouble();
+        plazoPrestamoMeses = teclado.nextDouble();
         
-        pagoMensual = (interesMensual * montoPrestamo) / (1 - Math.pow(interesMensual, plazoPrestamoMeses));
+        pagoMensual = (interesMensual * montoPrestamo) / (1 - Math.pow(1+interesMensual, -plazoPrestamoMeses));
+        System.out.println("El pago mensual es de: "+pagoMensual);
+      
     }
 }
